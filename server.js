@@ -25,6 +25,13 @@ const upload = multer({ storage });
 // Serve static files
 app.use(express.static('frontend'));
 
+const cors = require('cors');
+
+// Allow CORS for the frontend domain
+app.use(cors({
+  origin: 'https://compsc3.netlify.app/' // Replace with your actual frontend URL
+}));
+
 // Route to upload file
 app.post('/upload', upload.single('file'), (req, res) => {
     res.send('File uploaded successfully.');
