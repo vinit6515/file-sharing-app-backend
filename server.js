@@ -25,7 +25,7 @@ const upload = multer({ storage });
 // Serve static files
 app.use(express.static('frontend'));
 
-const cors = require('cors');
+
 
 // Allow CORS for the frontend domain
 app.use(cors({
